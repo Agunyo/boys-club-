@@ -1,0 +1,31 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main # Change this to your main branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Set Up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 14
+
+    - name: Install Dependencies
+      run: |
+        npm install
+        # If you use a different package manager, adjust the command accordingly
+
+    - name: Build and Deploy
+      run: |
+        # Add any build commands here (e.g., npm run build)
+        # Deploy to GitHub Pages
+        npx gh-pages -d path/to/your/website
+
