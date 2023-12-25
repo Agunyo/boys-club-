@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Boysclub</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Add your additional styles here */
+    </style>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">Boysclub</a>
+        <nav>
+            <a href="#" onclick="toggleSection('home')">HOME</a>
+            <a href="#" onclick="toggleSection('about')">ABOUT US</a>
+            <a href="#" onclick="toggleSection('projects')">PROJECTS</a>
+            <a href="#" onclick="toggleSection('contact')">CONTACT US</a>
+        </nav>
+        <form class="search-form" onsubmit="searchProjects(); return false;">
+            <input type="text" id="searchInput" placeholder="Search">
+            <button type="submit">Search</button>
+        </form>
+    </header>
+
+    <main>
+        <h1>PROJECTS</h1>
+        <section id="homeSection" class="projects-section">
+            <!-- Content for the HOME section goes here -->
+        </section>
+        <section id="aboutSection" class="projects-section" style="display: none;">
+            <!-- Content for the ABOUT US section goes here -->
+        </section>
+        <section id="projectsSection" class="projects-section" style="display: none;">
+            <!-- Content for the PROJECTS section goes here -->
+        </section>
+        <section id="contactSection" class="projects-section" style="display: none;">
+            <!-- Content for the CONTACT US section goes here -->
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; Boysclub</p>
+    </footer>
+
+    <script>
+        function toggleSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.projects-section').forEach(section => {
+                section.style.display = 'none';
+            });
+
+            // Show the selected section
+            document.getElementById(`${sectionId}Section`).style.display = 'block';
+        }
+
+        function searchProjects() {
+            // Get the search input value
+            var searchTerm = document.getElementById('searchInput').value.toLowerCase();
+
+            // Perform search logic and update the projects section accordingly
+            // Example: You can filter and display only projects that match the search term
+            // Update the content of the projects section based on the search results
+        }
+    </script>
+</body>
+</html>
