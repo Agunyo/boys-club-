@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main # Change this to your main branch
+      - main
 
 jobs:
   deploy:
@@ -18,14 +18,12 @@ jobs:
       with:
         node-version: 14
 
-    - name: Install Dependencies
+    - name: Install Dependencies and Deploy
       run: |
+        npm install -g gh-pages
         npm install
-        # If you use a different package manager, adjust the command accordingly
+        npm run build  # Adjust this line based on your build command
+        npx gh-pages -d dist  # Adjust the 'dist' directory based on your build output
 
-    - name: Build and Deploy
-      run: |
-        # Add any build commands here (e.g., npm run build)
-        # Deploy to GitHub Pages
-        npx gh-pages -d path/to/your/website
+
 
